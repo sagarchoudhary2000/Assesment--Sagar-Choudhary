@@ -52,3 +52,16 @@ SELECT DiscountPercent, AVG(TransactionAmount) AS Avg_Sales
 FROM sales_data 
 GROUP BY DiscountPercent 
 ORDER BY DiscountPercent DESC;
+
+
+
+-- Step 6: Returns & Feedback Analysis
+SELECT 
+    (COUNT(CASE WHEN Returned = 'Yes' THEN 1 END) * 100.0 / COUNT(*)) AS Return_Rate 
+FROM sales_data;
+
+SELECT AVG(FeedbackScore) AS Avg_Feedback_Score FROM sales_data;
+
+SELECT Returned, AVG(FeedbackScore) AS Avg_Feedback 
+FROM sales_data 
+GROUP BY Returned;
