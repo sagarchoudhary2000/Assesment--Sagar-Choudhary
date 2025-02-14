@@ -35,3 +35,12 @@ SELECT Region, SUM(TransactionAmount) AS Total_Sales
 FROM sales_data 
 WHERE Region IS NOT NULL
 GROUP BY Region;
+
+
+
+-- Step 5: Payment & Discounts Analysis
+SELECT PaymentMethod, COUNT(*) AS Count 
+FROM sales_data 
+WHERE PaymentMethod IS NOT NULL
+GROUP BY PaymentMethod 
+ORDER BY Count DESC;
