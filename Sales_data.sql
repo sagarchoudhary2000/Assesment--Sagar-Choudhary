@@ -8,3 +8,19 @@ FROM sales_data;
 SELECT COUNT(DISTINCT CustomerID) AS Unique_Customers, 
        AVG(CustomerAge) AS Avg_Customer_Age 
 FROM sales_data;
+
+
+
+-- Step 3: Product Performance
+-- Commit message: "Identify top-selling and revenue-generating products"
+SELECT ProductName, SUM(Quantity) AS Total_Sold 
+FROM sales_data 
+GROUP BY ProductName 
+ORDER BY Total_Sold DESC 
+LIMIT 5;
+
+SELECT ProductName, SUM(TransactionAmount) AS Total_Revenue 
+FROM sales_data 
+GROUP BY ProductName 
+ORDER BY Total_Revenue DESC 
+LIMIT 5;
