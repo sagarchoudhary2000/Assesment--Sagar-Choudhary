@@ -65,3 +65,14 @@ SELECT AVG(FeedbackScore) AS Avg_Feedback_Score FROM sales_data;
 SELECT Returned, AVG(FeedbackScore) AS Avg_Feedback 
 FROM sales_data 
 GROUP BY Returned;
+
+
+-- Step 7: Delivery & Shipping Analysis
+SELECT AVG(DeliveryTimeDays) AS Avg_Delivery_Time FROM sales_data;
+
+SELECT SUM(ShippingCost) AS Total_Shipping_Cost FROM sales_data;
+
+SELECT DeliveryTimeDays, AVG(FeedbackScore) AS Avg_Feedback 
+FROM sales_data 
+GROUP BY DeliveryTimeDays 
+ORDER BY DeliveryTimeDays;
