@@ -60,4 +60,3 @@ Prerequisites
 
 SQL database with sales_data table containing relevant fields.
 
-Basic knowledge of SQL for executing queries and interpreting results.
