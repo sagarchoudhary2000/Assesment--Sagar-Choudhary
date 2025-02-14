@@ -44,3 +44,11 @@ FROM sales_data
 WHERE PaymentMethod IS NOT NULL
 GROUP BY PaymentMethod 
 ORDER BY Count DESC;
+
+
+SELECT AVG(DiscountPercent) AS Avg_Discount FROM sales_data;
+
+SELECT DiscountPercent, AVG(TransactionAmount) AS Avg_Sales 
+FROM sales_data 
+GROUP BY DiscountPercent 
+ORDER BY DiscountPercent DESC;
