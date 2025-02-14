@@ -12,7 +12,6 @@ FROM sales_data;
 
 
 -- Step 3: Product Performance
--- Commit message: "Identify top-selling and revenue-generating products"
 SELECT ProductName, SUM(Quantity) AS Total_Sold 
 FROM sales_data 
 GROUP BY ProductName 
@@ -24,3 +23,15 @@ FROM sales_data
 GROUP BY ProductName 
 ORDER BY Total_Revenue DESC 
 LIMIT 5;
+
+
+-- Step 4: Store and Regional Analysis
+SELECT StoreType, SUM(TransactionAmount) AS Total_Sales 
+FROM sales_data 
+WHERE StoreType IS NOT NULL
+GROUP BY StoreType;
+
+SELECT Region, SUM(TransactionAmount) AS Total_Sales 
+FROM sales_data 
+WHERE Region IS NOT NULL
+GROUP BY Region;
